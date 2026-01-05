@@ -13,7 +13,7 @@ function About() {
       w="100%"
       position="relative"
       overflow="hidden"
-      bg="gray.50"
+      bg="white"
       display="flex"
       alignItems="center"
       justifyContent="center"
@@ -169,7 +169,7 @@ function About() {
                 fontSize={{ base: '5xl', md: '6xl' }}
                 fontWeight={800}
                 color="purple.600"
-                mb={3}
+                mb={5}
               >
                 4+
               </Heading>
@@ -211,7 +211,7 @@ function About() {
                 fontSize={{ base: '5xl', md: '6xl' }}
                 fontWeight={800}
                 color="blue.600"
-                mb={3}
+                mb={5}
               >
                 5+
               </Heading>
@@ -253,7 +253,7 @@ function About() {
                 fontSize={{ base: '5xl', md: '6xl' }}
                 fontWeight={800}
                 color="cyan.600"
-                mb={3}
+                mb={5}
               >
                 3+
               </Heading>

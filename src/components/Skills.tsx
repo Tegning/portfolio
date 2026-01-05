@@ -1,19 +1,42 @@
-import { Box, Heading, SimpleGrid, Badge, VStack } from '@chakra-ui/react'
+import { Box, Heading, SimpleGrid, Badge, VStack, Flex } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
 
 function Skills() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) element.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  // Color palette for badges
+  const badgeColors = [
+    { bg: 'purple.100', color: 'purple.700', hoverBg: 'purple.200' },
+    { bg: 'blue.100', color: 'blue.700', hoverBg: 'blue.200' },
+    { bg: 'cyan.100', color: 'cyan.700', hoverBg: 'cyan.200' },
+    { bg: 'teal.100', color: 'teal.700', hoverBg: 'teal.200' },
+    { bg: 'green.100', color: 'green.700', hoverBg: 'green.200' },
+    { bg: 'yellow.100', color: 'yellow.700', hoverBg: 'yellow.200' },
+    { bg: 'orange.100', color: 'orange.700', hoverBg: 'orange.200' },
+    { bg: 'red.100', color: 'red.700', hoverBg: 'red.200' },
+    { bg: 'pink.100', color: 'pink.700', hoverBg: 'pink.200' },
+    { bg: 'indigo.100', color: 'indigo.700', hoverBg: 'indigo.200' },
+  ]
+
+  const getBadgeColor = (index: number) => {
+    return badgeColors[index % badgeColors.length]
+  }
+
   const skillCategories = [
     {
-      category: 'Frontend',
-      skills: ['React', 'Vue.js', 'TypeScript', 'HTML/CSS', 'JavaScript', 'Tailwind CSS'],
+      category: 'Data Engineering',
+      skills: ['GCP', 'Hadoop', 'Hive', 'Spark', 'Kafka', 'MySQL', 'MongoDB', 'Couchbase', 'Redis', 'dbt', 'Iceberg', 'Debezium'],
     },
     {
-      category: 'Backend',
-      skills: ['Node.js', 'Python', 'Express.js', 'REST APIs', 'GraphQL', 'MongoDB'],
+      category: 'Data & ML',
+      skills: ['SQL', 'Python', 'Java', 'Scala', 'Bash', 'Airflow', 'Spring Boot', 'GCP', 'AWS', 'Scikit-learn', 'TensorFlow', 'PyTorch'],
     },
     {
-      category: 'Tools & Others',
-      skills: ['Git', 'Docker', 'AWS', 'CI/CD', 'Jest', 'Webpack'],
+      category: 'DevOps & MLOps',
+      skills: ['Linux', 'Jenkins', 'Ansible', 'Docker', 'Kubernetes', 'Spring Cloud', 'ELK', 'Prometheus', 'Grafana', 'MLflow', 'Feature Store', 'Expectations'],
     },
   ]
 
@@ -25,7 +48,7 @@ function Skills() {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      bgGradient="linear(180deg, white 0%, gray.50 100%)"
+      bg="gray.50"
       py={{ base: 16, md: 24 }}
       px={0}
       position="relative"
@@ -45,7 +68,7 @@ function Skills() {
             borderRadius="full"
             boxShadow="md"
           >
-            Technical Skills
+            Technical Skills & Certifications
           </Box>
           <Heading
             as="h2"
@@ -57,7 +80,7 @@ function Skills() {
             bgClip="text"
             letterSpacing="tight"
           >
-            Technical Skills
+            Technical Skills & Certifications
           </Heading>
         </VStack>
         <SimpleGrid columns={{ base: 1, md: 3 }} gap={8}>
@@ -89,29 +112,35 @@ function Skills() {
               >
                 {category.category}
               </Heading>
-              <VStack align="stretch" gap={3}>
-                {category.skills.map((skill, i) => (
-                  <Badge
-                    key={i}
-                    bg="purple.50"
-                    color="purple.800"
-                    px={4}
-                    py={2.5}
-                    borderRadius="lg"
-                    fontSize="sm"
-                    textAlign="center"
-                    fontWeight={600}
-                    _hover={{
-                      bg: 'purple.100',
-                      transform: 'scale(1.02)',
-                      color: 'purple.900',
-                    }}
-                    transition="all 0.2s"
-                  >
-                    {skill}
-                  </Badge>
-                ))}
-              </VStack>
+              <Flex
+                gap={2}
+                flexWrap="wrap"
+                align="flex-start"
+              >
+                {category.skills.map((skill, i) => {
+                  const colorScheme = getBadgeColor(i)
+                  return (
+                    <Badge
+                      key={i}
+                      bg={colorScheme.bg}
+                      color={colorScheme.color}
+                      px={2.5}
+                      py={1}
+                      borderRadius="md"
+                      fontSize="xs"
+                      fontWeight={600}
+                      textTransform="none"
+                      _hover={{
+                        bg: colorScheme.hoverBg,
+                        transform: 'translateY(-2px) scale(1.05)',
+                      }}
+                      transition="all 0.2s"
+                    >
+                      {skill}
+                    </Badge>
+                  )
+                })}
+              </Flex>
             </Box>
           ))}
         </SimpleGrid>
@@ -125,14 +154,7 @@ function Skills() {
           color="purple.600"
           _hover={{ color: 'purple.700', transform: 'translateX(-50%) translateY(4px)' }}
           cursor="pointer"
-          onClick={() => {
-            const contactSection = document.getElementById('contact')
-            if (contactSection) {
-              contactSection.scrollIntoView({ behavior: 'smooth' })
-            } else {
-              window.scrollTo({ top: 0, behavior: 'smooth' })
-            }
-          }}
+          onClick={() => scrollToSection('contact')}
           transition="all 0.3s"
           zIndex={2}
         >

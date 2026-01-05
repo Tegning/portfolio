@@ -43,7 +43,7 @@ function Awards() {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      bg="white"
+      bg="gray.50"
       py={{ base: 16, md: 24 }}
       px={0}
       position="relative"
@@ -131,7 +131,7 @@ function Awards() {
                 </Text>
                 <Badge
                   bgGradient="linear(135deg, #667eea, #764ba2)"
-                  color="white"
+                  color="blue"
                   mb={4}
                   px={4}
                   py={1.5}

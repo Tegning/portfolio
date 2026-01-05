@@ -10,6 +10,7 @@ import Projects from "./components/Projects";
 import Gallery from "./components/Gallery";
 import Videos from "./components/Videos";
 import Skills from "./components/Skills";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Gallery />
         <Videos />
         <Skills />
+        <Contact />
       </Box>
     </Box>
   );

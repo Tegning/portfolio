@@ -8,6 +8,17 @@ function Experience() {
   }
   const experiences = [
     {
+      title: 'Educator',
+      company: 'AVK+',
+      period: '2025 - Present',
+      description: [
+        'Mentored students both in-person and online on all things education-related and in various formats.',
+        'Covered subjects such as: Math, Science, English, Economics and Computer Science.',
+        'Prepared students for various certifications such as: SAT, ACT, IELTS, GCSE, GCE O-levels and A-levels, etc.',
+        'Supported students in applications and interviews for various scholarships and entrance exams such as ASEAN, A-Star, TestAS, AEIS, etc.',
+      ]
+    },
+    {
       title: 'Data Engineer',
       company: 'Torilab Inc.',
       period: '2025 - Present',
@@ -41,7 +52,7 @@ function Experience() {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      bgGradient="linear(180deg, white 0%, gray.50 100%)"
+      bg="white"
       py={{ base: 16, md: 24 }}
       px={0}
       position="relative"
@@ -142,7 +153,7 @@ function Experience() {
                     {exp.company}
                   </Text>
                   <VStack align="stretch" gap={3} mt={4}>
-                    {exp.description.map((item, i) => (
+                    {exp.description?.map((item, i) => (
                       <Box
                         key={i}
                         color="gray.800"

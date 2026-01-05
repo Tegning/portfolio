@@ -53,7 +53,7 @@ function Education() {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      bgGradient="linear(180deg, #F3E5F5 0%, white 100%)"
+      bg="gray.50"
       py={{ base: 16, md: 24 }}
       px={0}
       position="relative"

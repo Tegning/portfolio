@@ -97,7 +97,7 @@ function Navbar({ activeSection = 'home' }: NavbarProps) {
               color="gray.800"
               display={{ base: 'none', sm: 'block' }}
             >
-              Nham Quoc Hung
+              Greetings
             </Text>
           </Link>
 

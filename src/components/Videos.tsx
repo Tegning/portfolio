@@ -50,7 +50,7 @@ function Videos() {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      bgGradient="linear(180deg, #FFF3E0 0%, white 100%)"
+      bg="white"
       py={{ base: 16, md: 24 }}
       px={0}
       position="relative"

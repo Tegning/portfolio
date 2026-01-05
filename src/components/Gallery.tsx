@@ -76,7 +76,7 @@ function Gallery() {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      bg="white"
+      bg="gray.50"
       py={{ base: 16, md: 24 }}
       px={0}
       position="relative"
@@ -96,7 +96,7 @@ function Gallery() {
             borderRadius="full"
             boxShadow="md"
           >
-            Project Gallery
+            Learning Journey
           </Box>
           <Heading
             as="h2"
@@ -108,7 +108,7 @@ function Gallery() {
             bgClip="text"
             letterSpacing="tight"
           >
-            Project Gallery
+            Learning Journey
           </Heading>
         </VStack>
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>

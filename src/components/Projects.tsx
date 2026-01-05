@@ -1,4 +1,4 @@
-import { Box, Heading, Text, SimpleGrid, Badge, HStack, Button, Link, VStack } from '@chakra-ui/react'
+import { Box, Heading, Text, SimpleGrid, Badge, HStack, Button, VStack } from '@chakra-ui/react'
 import { FiExternalLink } from 'react-icons/fi'
 import { HiArrowDown } from 'react-icons/hi'
 
@@ -9,25 +9,25 @@ function Projects() {
   }
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with payment integration, user authentication, and admin dashboard.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      github: 'https://github.com/yourusername/project1',
-      demo: 'https://project1-demo.com',
+      title: 'Master\'s Coursework and Technical Certificates',
+      description: 'All relevant coursework and technical certificates from my master\'s degree as well as working experiences.',
+      technologies: ['Deep Learning', 'Machine Learning', 'Linear Algebra', 'Generative AI'],
+      github: 'https://github.com/nhamhung/Coursework-and-Certificates',
+      demo: 'https://github.com/nhamhung/Coursework-and-Certificates/blob/main/Coursework/Statement%20of%20Purpose.pdf',
     },
     {
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates and team collaboration features.',
-      technologies: ['Vue.js', 'Firebase', 'TypeScript'],
-      github: 'https://github.com/yourusername/project2',
-      demo: 'https://project2-demo.com',
+      title: 'YouTube Channel',
+      description: 'A YouTube channel where I share my learning journey and experiences in Computer Science.',
+      technologies: ['Data Engineer', 'LeetCode', 'Data Analytics'],
+      github: 'https://github.com/nhamhung/youtube-scripts',
+      demo: 'https://www.youtube.com/watch?v=cmZ9-sDzYYY',
     },
     {
-      title: 'Weather Dashboard',
-      description: 'A beautiful weather dashboard with location-based forecasts and interactive charts.',
-      technologies: ['React', 'Chart.js', 'OpenWeather API'],
-      github: 'https://github.com/yourusername/project3',
-      demo: 'https://project3-demo.com',
+      title: 'Personal Blog',
+      description: 'A personal blog where I share my knowledge and stories to others.',
+      technologies: ['Computer Science', 'AI', 'Cloud Computing'],
+      github: 'https://nhamhung.wordpress.com/',
+      demo: 'https://nhamhung.wordpress.com/2025/03/10/nhat-ky-hang-ngay/',
     },
   ]
 
@@ -39,7 +39,7 @@ function Projects() {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      bgGradient="linear(180deg, #E8F5E9 0%, white 100%)"
+      bg="white"
       py={{ base: 16, md: 24 }}
       px={0}
       position="relative"
@@ -126,25 +126,30 @@ function Projects() {
                     borderColor: 'purple.400',
                     transform: 'translateY(-2px)',
                   }}
-                  rightIcon={<FiExternalLink />}
                   transition="all 0.2s"
                 >
-                  GitHub
+                  <HStack gap={2}>
+                    <Text>GitHub</Text>
+                    <FiExternalLink />
+                  </HStack>
                 </Button>
                 <Button
                   onClick={() => window.open(project.demo, '_blank')}
                   size="sm"
                   bgGradient="linear(135deg, #667eea, #764ba2)"
-                  color="white"
+                  color="blue.600"
                   fontWeight={600}
-                  rightIcon={<FiExternalLink />}
                   _hover={{
                     transform: 'translateY(-2px)',
                     boxShadow: '0 8px 20px rgba(102, 126, 234, 0.4)',
                   }}
                   transition="all 0.2s"
+                  borderColor="purple.300"
                 >
-                  Live Demo
+                  <HStack gap={2}>
+                    <Text>Live Demo</Text>
+                    <FiExternalLink />
+                  </HStack>
                 </Button>
               </HStack>
             </Box>
