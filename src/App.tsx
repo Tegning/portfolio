@@ -1,16 +1,32 @@
 import "./App.css";
-import { Button, HStack } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Education from "./components/Education";
+import Experience from "./components/Experience";
+import Awards from "./components/Awards";
+import Projects from "./components/Projects";
+import Gallery from "./components/Gallery";
+import Videos from "./components/Videos";
+import Skills from "./components/Skills";
 
 function App() {
   return (
-    <>
-      <div>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        <HStack>
-          <Button>Click me</Button>
-        </HStack>
-      </div>
-    </>
+    <Box minH="100vh" w="100%">
+      <Navbar />
+      <Box as="main" w="100%" p={0} m={0}>
+        <Hero />
+        <About />
+        <Education />
+        <Experience />
+        <Awards />
+        <Projects />
+        <Gallery />
+        <Videos />
+        <Skills />
+      </Box>
+    </Box>
   );
 }
 
