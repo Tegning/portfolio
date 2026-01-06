@@ -145,9 +145,9 @@ function Hero() {
             >
               <Text
                 fontSize={{ base: 'sm', md: 'md' }}
-                color="white"
+                color="yellow.300"
                 mb={2}
-                fontWeight={500}
+                fontWeight={600}
                 letterSpacing="wide"
                 opacity={0.95}
                 css={{
@@ -164,7 +164,7 @@ function Hero() {
                 as="h1"
                 fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }}
                 fontWeight={800}
-                color="white"
+                color="green.200"
                 mb={4}
                 lineHeight="shorter"
                 textShadow="0 4px 20px rgba(0, 0, 0, 0.3)"
@@ -182,7 +182,7 @@ function Hero() {
                 as="h2"
                 fontSize={{ base: 'xl', md: '2xl', lg: '3xl' }}
                 fontWeight={600}
-                color="white"
+                color="orange.300"
                 mb={6}
                 opacity={0.95}
                 css={{
