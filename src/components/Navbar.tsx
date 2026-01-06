@@ -227,7 +227,19 @@ function Navbar({ activeSection = 'home' }: NavbarProps) {
                         borderColor: '#667eea',
                       }}
                     >
-                      {item.label}
+                      <Flex align="center" gap={2}>
+                        {isActive && (
+                          <Box
+                            w="8px"
+                            h="8px"
+                            borderRadius="full"
+                            bg="#667eea"
+                            boxShadow="0 0 8px rgba(102, 126, 234, 0.6)"
+                            flexShrink={0}
+                          />
+                        )}
+                        <Text>{item.label}</Text>
+                      </Flex>
                     </Link>
                   )
                 })}

@@ -256,7 +256,7 @@ function Hero() {
                 variant="outline"
                 borderColor="white"
                 borderWidth="2px"
-                color="white"
+                color="blue.600"
                 fontWeight={600}
                 px={8}
                 bg="rgba(255, 255, 255, 0.1)"
