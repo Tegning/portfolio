@@ -25,11 +25,6 @@ function Hero() {
         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)',
         backgroundSize: '200% 200%',
         animation: 'gradientShift 15s ease infinite',
-        '@keyframes gradientShift': {
-          '0%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
-          '100%': { backgroundPosition: '0% 50%' },
-        },
       }}
     >
       {/* Animated floating particles */}
@@ -57,12 +52,6 @@ function Hero() {
             css={{
               animation: `float ${duration}s ease-in-out infinite`,
               animationDelay: `${i * 0.5}s`,
-              '@keyframes float': {
-                '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
-                '25%': { transform: 'translate(30px, -40px) rotate(90deg)' },
-                '50%': { transform: 'translate(-30px, 30px) rotate(180deg)' },
-                '75%': { transform: 'translate(20px, 20px) rotate(270deg)' },
-              },
             }}
           />
         )
@@ -80,10 +69,6 @@ function Hero() {
         opacity={0.25}
         css={{
           animation: 'pulse 8s ease-in-out infinite',
-          '@keyframes pulse': {
-            '0%, 100%': { transform: 'scale(1)', opacity: 0.25 },
-            '50%': { transform: 'scale(1.1)', opacity: 0.35 },
-          },
         }}
       />
       <Box
@@ -97,10 +82,7 @@ function Hero() {
         opacity={0.25}
         css={{
           animation: 'pulse 10s ease-in-out infinite',
-          '@keyframes pulse': {
-            '0%, 100%': { transform: 'scale(1)', opacity: 0.25 },
-            '50%': { transform: 'scale(1.15)', opacity: 0.35 },
-          },
+          transform: 'scale(1.15)',
         }}
       />
       <Box
@@ -114,11 +96,7 @@ function Hero() {
         bgGradient="linear(135deg, #43e97b 0%, #38f9d7 100%)"
         opacity={0.15}
         css={{
-          animation: 'pulse 12s ease-in-out infinite',
-          '@keyframes pulse': {
-            '0%, 100%': { transform: 'translate(-50%, -50%) scale(1)', opacity: 0.15 },
-            '50%': { transform: 'translate(-50%, -50%) scale(1.2)', opacity: 0.25 },
-          },
+          animation: 'pulseCenter 12s ease-in-out infinite',
         }}
       />
 
@@ -137,10 +115,6 @@ function Hero() {
             <Box
               css={{
                 animation: 'fadeInUp 1s ease-out',
-                '@keyframes fadeInUp': {
-                  '0%': { opacity: 0, transform: 'translateY(30px)' },
-                  '100%': { opacity: 1, transform: 'translateY(0)' },
-                },
               }}
             >
               <Text
@@ -152,10 +126,6 @@ function Hero() {
                 opacity={0.95}
                 css={{
                   animation: 'fadeIn 1.2s ease-out',
-                  '@keyframes fadeIn': {
-                    '0%': { opacity: 0 },
-                    '100%': { opacity: 0.95 },
-                  },
                 }}
               >
                 Hello, I'm
@@ -170,10 +140,6 @@ function Hero() {
                 textShadow="0 4px 20px rgba(0, 0, 0, 0.3)"
                 css={{
                   animation: 'fadeInUp 1s ease-out 0.2s both',
-                  '@keyframes fadeInUp': {
-                    '0%': { opacity: 0, transform: 'translateY(30px)' },
-                    '100%': { opacity: 1, transform: 'translateY(0)' },
-                  },
                 }}
               >
                 Nham Quoc Hung
@@ -187,10 +153,6 @@ function Hero() {
                 opacity={0.95}
                 css={{
                   animation: 'fadeInUp 1s ease-out 0.4s both',
-                  '@keyframes fadeInUp': {
-                    '0%': { opacity: 0, transform: 'translateY(30px)' },
-                    '100%': { opacity: 0.95, transform: 'translateY(0)' },
-                  },
                 }}
               >
                 Data Engineer, Software Engineer & Educator
@@ -203,10 +165,6 @@ function Hero() {
                 opacity={0.9}
                 css={{
                   animation: 'fadeInUp 1s ease-out 0.6s both',
-                  '@keyframes fadeInUp': {
-                    '0%': { opacity: 0, transform: 'translateY(30px)' },
-                    '100%': { opacity: 0.9, transform: 'translateY(0)' },
-                  },
                 }}
               >
                 I am a Computer Science graduate with a specialisation in Data and passion for teaching.
@@ -219,10 +177,6 @@ function Hero() {
               w={{ base: 'full', sm: 'auto' }}
               css={{
                 animation: 'fadeInUp 1s ease-out 0.8s both',
-                '@keyframes fadeInUp': {
-                  '0%': { opacity: 0, transform: 'translateY(30px)' },
-                  '100%': { opacity: 1, transform: 'translateY(0)' },
-                },
               }}
             >
               <Button
@@ -241,11 +195,7 @@ function Hero() {
                 backgroundColor="gray.100"
                 transition="all 0.3s"
                 css={{
-                  '@keyframes pulse': {
-                    '0%, 100%': { boxShadow: '0 8px 30px rgba(0, 0, 0, 0.3)' },
-                    '50%': { boxShadow: '0 8px 40px rgba(255, 255, 255, 0.5)' },
-                  },
-                  animation: 'pulse 3s ease-in-out infinite',
+                  animation: 'buttonPulse 3s ease-in-out infinite',
                 }}
               >
                 View My Work
@@ -278,10 +228,6 @@ function Hero() {
               mt={4}
               css={{
                 animation: 'fadeInUp 1s ease-out 1s both',
-                '@keyframes fadeInUp': {
-                  '0%': { opacity: 0, transform: 'translateY(30px)' },
-                  '100%': { opacity: 1, transform: 'translateY(0)' },
-                },
               }}
             >
               <Link
@@ -340,10 +286,6 @@ function Hero() {
             alignItems="center"
             css={{
               animation: 'fadeInRight 1s ease-out 0.4s both',
-              '@keyframes fadeInRight': {
-                '0%': { opacity: 0, transform: 'translateX(50px)' },
-                '100%': { opacity: 1, transform: 'translateX(0)' },
-              },
             }}
           >
             <Box
