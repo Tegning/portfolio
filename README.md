@@ -19,6 +19,15 @@ A modern, responsive portfolio website built with React, TypeScript, Vite, Chakr
 
 ### Installation
 
+- Install Git CLI: https://git-scm.com/install/windows
+
+- Install npm: https://nodejs.org/en/download/
+
+```bash
+git clone https://github.com/yourusername/yourrepo.git
+cd my-portfolio
+```
+
 ```bash
 npm install
 ```
@@ -27,6 +36,17 @@ npm install
 
 ```bash
 npm run dev
+```
+
+### Push code to GitHub
+
+```bash
+git status
+git add .
+git commit -m "make a change"
+git branch -M main
+git remote add origin https://github.com/yourusername/yourrepo.git
+git push -u origin main
 ```
 
 ### Build for Production
