@@ -138,6 +138,7 @@ function Experience() {
                       <Badge
                         bgGradient="linear(135deg, #667eea, #764ba2)"
                         color="blue"
+                        backgroundColor="gray.100"
                         px={4}
                         py={1.5}
                         borderRadius="full"

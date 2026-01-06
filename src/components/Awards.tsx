@@ -132,6 +132,7 @@ function Awards() {
                 <Badge
                   bgGradient="linear(135deg, #667eea, #764ba2)"
                   color="blue"
+                  backgroundColor="gray.100"
                   mb={4}
                   px={4}
                   py={1.5}
