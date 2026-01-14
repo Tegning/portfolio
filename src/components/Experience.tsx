@@ -24,6 +24,8 @@ function Experience() {
       period: '2025 - Present',
       description: [
         'Supported BI team in building over 20 data models across 5 different applications and present actionable insights to company executives and business leaders on a biweekly basis',
+        'Design and maintain pipelines to collect data from various sources that power the company\'s analytics ecosystem and enable decision-making dashboard creation in Looker',
+        'Collaborate closely with cross-functional teams including Mobile, Frontend, Backend, Marketing, Sales and Product to ensure data quality, support self-service analytics, and drive data-driven business growth'
       ],
     },
     {
@@ -32,6 +34,8 @@ function Experience() {
       period: '2023 - 2025',
       description: [
         'Worked under Global Ad Technology Supervisory Department to manage Ad Item Master, a key service which stores, delivers, tracks and reports highly critical, revenue-generating ads for hundreds of millions of Rakuten Group\'s Ichiba app users as well as merchants, one of Japan\'s largest online retail marketplaces',
+        'Administered highly available Couchbase Enterprise clusters and Hive data warehouses acting as key sources of 500 million ad items, shops and campaigns across different data centers to enable real-time ad delivery as well as analytical and reporting capabilities for all downstream ad users',
+        'Developed and maintained highly scalable, low-latency, cached, containerised and load-balanced backend systems and APIs on top of Couchbase and Redis clusters using Spring Framework, Kubernetes, Kafka and Hive to serve super targeted ads and accurately track user clicks and impressions for merchant charging'
       ],
     },
     {
@@ -40,6 +44,8 @@ function Experience() {
       period: '2021 - 2023',
       description: [
         'Worked under Data Platform team to develop batch and real-time data ingestion pipelines to support downstream Finance users in data modelling and financial reporting for Garena, Sea Group\'s gaming arm',
+        'Built a fully automated, user-centric and web-based data ingestion portal for non-technical Finance users to ingest data from various sources of their needs such as relational databases, Google Sheets, CSV and Kafka into HDFS, hence removed the need for manual ticket requests and significantly boosted productivity',
+        'Performed daily on-call duties to monitor hundreds of Terabyte-scale batch and streaming ingestion jobs from major games such as Free Fire, Call of Duty or Undawn using Bash and PySpark'
       ],
     },
   ]
