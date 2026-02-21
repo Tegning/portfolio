@@ -1,6 +1,6 @@
 import { Box, Container, Flex, Link, IconButton, useDisclosure, Drawer, VStack, Text, Image } from '@chakra-ui/react'
 import { HiMenu, HiX } from 'react-icons/hi'
-import profileImage from '../assets/profile.jpeg'
+import profileImage from '../assets/profile.jpg'
 
 interface NavbarProps {
   activeSection?: string

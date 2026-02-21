@@ -1,7 +1,7 @@
 import { Box, Container, Heading, Text, Button, Flex, VStack, Image, Link } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
 import { FiDownload } from 'react-icons/fi'
-import profileImage from '../assets/profile.jpeg'
+import profileImage from '../assets/profile.jpg'
 import resumePdf from '../assets/resume.pdf?url'
 
 function Hero() {

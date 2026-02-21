@@ -1,6 +1,8 @@
-import { Box, Heading, Text, SimpleGrid, Badge, HStack, VStack, Button } from '@chakra-ui/react'
+import { Box, Heading, Text, SimpleGrid, Badge, HStack, VStack, Button, Image } from '@chakra-ui/react'
 import { FiExternalLink } from 'react-icons/fi'
 import { HiArrowDown } from 'react-icons/hi'
+import wicoImage from '../assets/wico.jpg'
+import elementzFairImage from '../assets/elementz_fair.jpg'
 
 function Projects() {
   const scrollToSection = (sectionId: string) => {
@@ -12,15 +14,13 @@ function Projects() {
       title: 'AI-Based Traffic Management System',
       description: 'Cost-efficient AI system for optimizing traffic counters in Vietnam. Real-time edge deployment on NVIDIA Jetson Nano; YOLOv10 for vehicle detection and driver drowsiness monitoring. F-index algorithm for fatigue assessment; 94.4% vehicle recognition and 91.8% drowsiness detection. End-to-end prototype with Unity 3D traffic simulation.',
       technologies: ['Computer Vision', 'YOLOv10', 'NVIDIA Jetson Nano', 'Unity 3D', 'Python', 'CNN', 'CNN-LSTM'],
-      github: '#',
-      demo: '#',
+      image: wicoImage,
     },
     {
       title: 'Gd-doped Fe₃O₄@SiO₂ Nanoparticles for Drug Delivery',
       description: 'Co-researched fabrication of Gd-doped Fe₃O₄@SiO₂ nanoparticles for drug delivery. Contributed to scientific presentation at the 26th International Elementz Fair, Singapore (Silver Award).',
       technologies: ['Materials Science', 'Nanoparticles', 'Drug Delivery', 'Research'],
-      github: '#',
-      demo: '#',
+      image: elementzFairImage,
     },
   ]
 
@@ -52,12 +52,18 @@ function Projects() {
               key={index}
               bg="#131b2e"
               borderRadius="var(--radius-lg)"
-              p={6}
+              overflow="hidden"
               border="1px solid"
               borderColor="#1e3a5f"
               _hover={{ borderColor: 'rgba(34, 211, 238, 0.3)' }}
               transition="border-color 0.2s"
             >
+              {project.image && (
+                <Box w="100%" h="400px" bg="#1a2540" overflow="auto">
+                  <Image src={project.image} alt={project.title} w="100%" h="auto" display="block" />
+                </Box>
+              )}
+              <Box p={6}>
               <Heading as="h3" fontSize="lg" mb={3} color="#f1f5f9" fontWeight={600} fontFamily="var(--font-sans)">
                 {project.title}
               </Heading>
@@ -81,25 +87,9 @@ function Projects() {
                   </Badge>
                 ))}
               </HStack>
-              <HStack gap={3}>
+              {project.image && (
                 <Button
-                  onClick={() => project.github !== '#' && window.open(project.github, '_blank')}
-                  size="sm"
-                  variant="outline"
-                  borderColor="#1e3a5f"
-                  color="#94a3b8"
-                  fontWeight={500}
-                  fontFamily="var(--font-mono)"
-                  _hover={{ borderColor: '#22d3ee', color: '#22d3ee' }}
-                  transition="all 0.2s"
-                >
-                  <HStack gap={2}>
-                    <Text>GitHub</Text>
-                    <FiExternalLink size={12} />
-                  </HStack>
-                </Button>
-                <Button
-                  onClick={() => project.demo !== '#' && window.open(project.demo, '_blank')}
+                  onClick={() => window.open(project.image, '_blank')}
                   size="sm"
                   bg="#22d3ee"
                   color="#0a0e17"
@@ -113,7 +103,8 @@ function Projects() {
                     <FiExternalLink size={12} />
                   </HStack>
                 </Button>
-              </HStack>
+              )}
+              </Box>
             </Box>
           ))}
         </SimpleGrid>
