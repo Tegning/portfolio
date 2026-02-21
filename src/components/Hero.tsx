@@ -1,4 +1,4 @@
-import { Box, Container, Heading, Text, Button, Flex, VStack, Link, Image } from '@chakra-ui/react'
+import { Box, Container, Heading, Text, Button, Flex, VStack, Image } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
 import profileImage from '../assets/profile.jpeg'
 
