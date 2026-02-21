@@ -1,6 +1,7 @@
-import { Box, Heading, Text, SimpleGrid, Button, VStack } from '@chakra-ui/react'
-import { HiArrowDown } from 'react-icons/hi'
-import { FiExternalLink } from 'react-icons/fi'
+import { useState } from 'react'
+import { Box, Heading, Text, SimpleGrid, Button, VStack, IconButton, Flex } from '@chakra-ui/react'
+import { HiArrowDown, HiX } from 'react-icons/hi'
+import { FiExternalLink, FiEye } from 'react-icons/fi'
 
 // Vite: glob all PDFs in assets/certificates (relative to this file)
 const certModules = import.meta.glob('../assets/certificates/*.pdf', {
@@ -21,6 +22,7 @@ function getCertificates(): { name: string; url: string }[] {
 const certificates = getCertificates()
 
 function Certificates() {
+  const [previewCert, setPreviewCert] = useState<{ name: string; url: string } | null>(null)
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) element.scrollIntoView({ behavior: 'smooth' })
@@ -96,25 +98,91 @@ function Certificates() {
                   >
                     {cert.name}
                   </Text>
-                  <Button
-                    size="sm"
-                    bg="#22d3ee"
-                    color="#0a0e17"
-                    fontWeight={500}
-                    fontFamily="var(--font-mono)"
-                    _hover={{ bg: '#67e8f9' }}
-                    transition="all 0.2s"
-                    onClick={() => window.open(cert.url, '_blank', 'noopener,noreferrer')}
-                  >
-                    <Box as="span" mr={2} display="inline-flex">
-                      <FiExternalLink />
-                    </Box>
-                    Open full PDF
-                  </Button>
+                  <VStack align="stretch" gap={2}>
+                    <Button
+                      size="sm"
+                      bg="#22d3ee"
+                      color="#0a0e17"
+                      fontWeight={500}
+                      fontFamily="var(--font-mono)"
+                      _hover={{ bg: '#67e8f9' }}
+                      transition="all 0.2s"
+                      onClick={() => setPreviewCert(cert)}
+                    >
+                      <Box as="span" mr={2} display="inline-flex">
+                        <FiEye />
+                      </Box>
+                      Preview
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      borderColor="#1e3a5f"
+                      color="#94a3b8"
+                      fontWeight={500}
+                      fontFamily="var(--font-mono)"
+                      _hover={{ borderColor: 'rgba(34, 211, 238, 0.5)', color: '#22d3ee' }}
+                      transition="all 0.2s"
+                      onClick={() => window.open(cert.url, '_blank', 'noopener,noreferrer')}
+                    >
+                      <Box as="span" mr={2} display="inline-flex">
+                        <FiExternalLink />
+                      </Box>
+                      Open in new tab
+                    </Button>
+                  </VStack>
                 </Box>
               </Box>
             ))}
           </SimpleGrid>
+        )}
+
+        {/* PDF preview overlay */}
+        {previewCert && (
+          <Box
+            position="fixed"
+            inset={0}
+            zIndex={50}
+            bg="blackAlpha.800"
+            display="flex"
+            flexDirection="column"
+            onClick={() => setPreviewCert(null)}
+          >
+            <Box
+              flex={1}
+              display="flex"
+              flexDirection="column"
+              maxW="900px"
+              maxH="90vh"
+              mx="auto"
+              my={4}
+              w="100%"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Flex justify="space-between" align="center" mb={2} px={1}>
+                <Text color="#f1f5f9" fontWeight={600} fontFamily="var(--font-sans)" noOfLines={1}>
+                  {previewCert.name}
+                </Text>
+                <IconButton
+                  aria-label="Close preview"
+                  size="sm"
+                  variant="ghost"
+                  color="#94a3b8"
+                  _hover={{ color: '#22d3ee', bg: 'whiteAlpha.100' }}
+                  onClick={() => setPreviewCert(null)}
+                >
+                  <HiX size={20} />
+                </IconButton>
+              </Flex>
+              <Box flex={1} minH={0} bg="#1a2540" borderRadius="var(--radius-lg)" overflow="hidden">
+                <iframe
+                  src={previewCert.url}
+                  title={previewCert.name}
+                  style={{ width: '100%', height: '100%', border: 'none' }}
+                />
+              </Box>
+            </Box>
+          </Box>
         )}
 
         <Box

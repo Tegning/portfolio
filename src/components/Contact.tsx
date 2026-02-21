@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Box, Heading, Text, VStack, HStack, Link, Button, Input, Textarea } from '@chakra-ui/react'
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import { FaGithub, FaEnvelope } from 'react-icons/fa'
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -21,7 +21,7 @@ function Contact() {
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     )
-    window.location.href = `mailto:your.email@example.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:kallerswith@gmail.com?subject=${subject}&body=${body}`
   }
 
   const inputStyles = {
@@ -86,7 +86,7 @@ function Contact() {
                     <Text fontSize="xs" fontWeight={500} color="#94a3b8" mb={2} fontFamily="var(--font-mono)">
                       Email *
                     </Text>
-                    <Input name="email" type="email" value={formData.email} onChange={handleChange} placeholder="your.email@example.com" required {...inputStyles} />
+                    <Input name="email" type="email" value={formData.email} onChange={handleChange} placeholder="kallerswith@gmail.com" required {...inputStyles} />
                   </Box>
                 </HStack>
                 <Box>
@@ -122,7 +122,7 @@ function Contact() {
                 Or connect with me
               </Text>
               <HStack gap={5} justify="center" flexWrap="wrap">
-                <Link href="https://github.com" target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: 'none' }}>
+                {/* <Link href="https://github.com" target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: 'none' }}>
                   <Box
                     w="44px"
                     h="44px"
@@ -139,26 +139,8 @@ function Contact() {
                   >
                     <FaGithub size={20} />
                   </Box>
-                </Link>
-                <Link href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: 'none' }}>
-                  <Box
-                    w="44px"
-                    h="44px"
-                    borderRadius="var(--radius)"
-                    bg="#1a2540"
-                    border="1px solid"
-                    borderColor="#1e3a5f"
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                    _hover={{ borderColor: '#22d3ee', color: '#22d3ee' }}
-                    transition="all 0.2s"
-                    css={{ '& svg': { color: '#94a3b8', transition: 'color 0.2s' }, '&:hover svg': { color: '#22d3ee' } }}
-                  >
-                    <FaLinkedin size={20} />
-                  </Box>
-                </Link>
-                <Link href="mailto:your.email@example.com" _hover={{ textDecoration: 'none' }}>
+                </Link> */}
+                <Link href="mailto:kallerswith@gmail.com" _hover={{ textDecoration: 'none' }}>
                   <Box
                     w="44px"
                     h="44px"

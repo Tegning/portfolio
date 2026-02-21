@@ -11,25 +11,41 @@ function Awards() {
       title: 'Gold Medal – World Invention Creativity Olympics 2025',
       organization: 'South Korea',
       year: 'July 2025',
-      description: 'Competed among 313 teams and 1,000+ competitors from 25 countries. Presented the finalized AI-based traffic management system with validated real-time deployment. Assessed on creativity, technical feasibility, practical impact, and clarity of presentation.',
+      description: [
+        'Competed among 313 teams and 1,000+ competitors from 25 countries.',
+        'Presented the finalized AI-based traffic management system with validated real-time deployment.',
+        'Assessed on creativity, technical feasibility, practical impact, and clarity of presentation.',
+      ],
     },
     {
       title: 'Silver Award – MSEC Forum (Global High School Forum in HINATA 2025)',
       organization: 'Miyazaki, Japan',
       year: 'July 2025',
-      description: 'Awarded Silver among participants from 7 schools across 4 countries (Japan, Taiwan, Vietnam, Thailand). Presented an enhanced AI-based traffic system with expanded training datasets and improved recognition optimization. Open-theme forum aligned with UN SDGs.',
+      description: [
+        'Awarded Silver among participants from 7 schools across 4 countries (Japan, Taiwan, Vietnam, Thailand).',
+        'Presented an enhanced AI-based traffic system with expanded training datasets and improved recognition optimization.',
+        'Open-theme forum aligned with UN SDGs.',
+      ],
     },
     {
       title: 'Silver Award – 26th International Elementz Fair',
       organization: 'Singapore',
       year: 'April 2025',
-      description: 'Awarded Silver among 210 teams from over 80 schools. Co-researched fabrication of Gd-doped Fe₃O₄@SiO₂ nanoparticles for drug delivery and contributed to scientific presentation.',
+      description: [
+        'Awarded Silver among 210 teams from over 80 schools.',
+        'Co-researched fabrication of Gd-doped Fe₃O₄@SiO₂ nanoparticles for drug delivery.',
+        'Contributed to scientific presentation.',
+      ],
     },
     {
       title: 'First Place – Youth Innovator Competition',
       organization: 'Nguyễn Tất Thành Secondary & High School',
       year: 'May 2025',
-      description: 'Awarded 1 of 2 First Prizes among 16 recognised teams at the 10th Youth Innovator Competition. Recognised for creative thinking, problem-solving, and application of interdisciplinary knowledge. Developed and presented the initial prototype of an adaptive traffic management system.',
+      description: [
+        'Awarded 1 of 2 First Prizes among 16 recognised teams at the 10th Youth Innovator Competition.',
+        'Recognised for creative thinking, problem-solving, and application of interdisciplinary knowledge.',
+        'Developed and presented the initial prototype of an adaptive traffic management system.',
+      ],
     },
   ]
 
@@ -86,9 +102,13 @@ function Awards() {
               >
                 {award.year}
               </Badge>
-              <Text color="#94a3b8" lineHeight="tall" fontSize="sm" fontWeight={500}>
-                {award.description}
-              </Text>
+              <Box as="ul" pl={5} pr={0} style={{ listStyleType: 'disc', listStylePosition: 'outside' }}>
+                {award.description.map((point, i) => (
+                  <Box as="li" key={i} color="#94a3b8" fontSize="sm" fontWeight={500} lineHeight="tall" mb={2} _last={{ mb: 0 }}>
+                    {point}
+                  </Box>
+                ))}
+              </Box>
             </Box>
           ))}
         </SimpleGrid>

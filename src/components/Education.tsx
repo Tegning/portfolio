@@ -1,5 +1,6 @@
 import { Box, Heading, Text, Flex, VStack, HStack, Image } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
+import schoolLogo from '../assets/school_logo.png'
 
 function Education() {
   const scrollToSection = (sectionId: string) => {
@@ -10,9 +11,9 @@ function Education() {
     {
       degree: 'Lower and Upper Secondary School',
       institution: 'Nguyen Tat Thanh Lower and Upper Secondary School',
-      period: 'Present',
+      period: 'Sep 2023 - Present',
       specialization: null,
-      logo: undefined as string | undefined,
+      logo: schoolLogo,
       description: [
         'GPA: Grade 10 — 9.0 | Grade 11 — 9.4 | Semester 1 Grade 12 — 9.4',
         'IELTS: 7.5 Overall',

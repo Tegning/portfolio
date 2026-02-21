@@ -26,7 +26,7 @@ function Skills() {
       skills: ['YOLOv10', 'Object Detection', 'Face Detection', 'Drowsiness Detection', 'CNN', 'CNN-LSTM', 'PyTorch', 'TensorFlow', 'Scikit-learn'],
     },
     {
-      category: 'Edge & Deployment',
+      category: 'Edge Computing & Deployment',
       skills: ['NVIDIA Jetson Nano', 'Real-time Inference', 'Edge Deployment', 'Model Optimization'],
     },
     {
