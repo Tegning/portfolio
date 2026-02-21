@@ -160,7 +160,7 @@ function Certificates() {
               onClick={(e) => e.stopPropagation()}
             >
               <Flex justify="space-between" align="center" mb={2} px={1}>
-                <Text color="#f1f5f9" fontWeight={600} fontFamily="var(--font-sans)" noOfLines={1}>
+                <Text color="#f1f5f9" fontWeight={600} fontFamily="var(--font-sans)">
                   {previewCert.name}
                 </Text>
                 <IconButton

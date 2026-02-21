@@ -1,6 +1,5 @@
 import { Box, Container, Heading, Text, Button, Flex, VStack, Link, Image } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
-import { FaGithub, FaEnvelope } from 'react-icons/fa'
 import profileImage from '../assets/profile.jpeg'
 
 function Hero() {
@@ -144,31 +143,6 @@ function Hero() {
               >
                 Get In Touch
               </Button>
-            </Flex>
-
-            <Flex
-              gap={6}
-              mt={2}
-              css={{ animation: 'fadeInUp 0.8s ease-out 0.6s both' }}
-            >
-              {/* <Link
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                color="#64748b"
-                _hover={{ color: '#22d3ee', transform: 'translateY(-2px)' }}
-                transition="all 0.2s"
-              >
-                <FaGithub size={22} />
-              </Link> */}
-              {/* <Link
-                href="mailto:kallerswith@gmail.com"
-                color="#64748b"
-                _hover={{ color: '#22d3ee', transform: 'translateY(-2px)' }}
-                transition="all 0.2s"
-              >
-                <FaEnvelope size={22} />
-              </Link> */}
             </Flex>
           </VStack>
 

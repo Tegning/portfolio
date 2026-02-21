@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Box, Heading, Text, VStack, HStack, Link, Button, Input, Textarea } from '@chakra-ui/react'
-import { FaGithub, FaEnvelope } from 'react-icons/fa'
+import { FaEnvelope } from 'react-icons/fa'
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -122,24 +122,6 @@ function Contact() {
                 Or connect with me
               </Text>
               <HStack gap={5} justify="center" flexWrap="wrap">
-                {/* <Link href="https://github.com" target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: 'none' }}>
-                  <Box
-                    w="44px"
-                    h="44px"
-                    borderRadius="var(--radius)"
-                    bg="#1a2540"
-                    border="1px solid"
-                    borderColor="#1e3a5f"
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                    _hover={{ borderColor: '#22d3ee', color: '#22d3ee' }}
-                    transition="all 0.2s"
-                    css={{ '& svg': { color: '#94a3b8', transition: 'color 0.2s' }, '&:hover svg': { color: '#22d3ee' } }}
-                  >
-                    <FaGithub size={20} />
-                  </Box>
-                </Link> */}
                 <Link href="mailto:kallerswith@gmail.com" _hover={{ textDecoration: 'none' }}>
                   <Box
                     w="44px"
