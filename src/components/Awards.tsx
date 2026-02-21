@@ -1,7 +1,5 @@
-import { Box, Heading, Text, SimpleGrid, Badge, Image, VStack } from '@chakra-ui/react'
+import { Box, Heading, Text, SimpleGrid, Badge, VStack } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
-import saLogo from '../assets/sa.png'
-import nusLogo from '../assets/nus.svg'
 
 function Awards() {
   const scrollToSection = (sectionId: string) => {
@@ -10,29 +8,29 @@ function Awards() {
   }
   const awards = [
     {
-      title: 'ASEAN Secondary Scholarship',
-      organization: 'Saint Andrew\'s Junior College',
-      year: '2014 - 2018',
-      description: 'Full-ride scholarship for 4 years of secondary and junior college education',
-      logo: saLogo,
-      icon: '⭐',
+      title: 'Gold Medal – World Invention Creativity Olympics 2025',
+      organization: 'South Korea',
+      year: 'July 2025',
+      description: 'Competed among 313 teams and 1,000+ competitors from 25 countries. Presented the finalized AI-based traffic management system with validated real-time deployment. Assessed on creativity, technical feasibility, practical impact, and clarity of presentation.',
     },
     {
-      title: 'ASEAN Undergraduate Scholarship',
-      organization: 'National University of Singapore',
-      year: '2018 - 2022',
-      description: 'Full-ride scholarship for 4 years of undergraduate study',
-      logo: nusLogo,
-      icon: '🎓',
+      title: 'Silver Award – MSEC Forum (Global High School Forum in HINATA 2025)',
+      organization: 'Miyazaki, Japan',
+      year: 'July 2025',
+      description: 'Awarded Silver among participants from 7 schools across 4 countries (Japan, Taiwan, Vietnam, Thailand). Presented an enhanced AI-based traffic system with expanded training datasets and improved recognition optimization. Open-theme forum aligned with UN SDGs.',
     },
     {
-      title: '1st prize winning team | Healthcare track | AIxImpact Case Competition',
-      organization: 'QuantumBlack, a McKinsey company',
-      year: '2022',
-      description: 'Best Project award within the Healthcare track of AIxImpact Case Competition',
-      logo: nusLogo,
-      icon: '⭐',
-    }
+      title: 'Silver Award – 26th International Elementz Fair',
+      organization: 'Singapore',
+      year: 'April 2025',
+      description: 'Awarded Silver among 210 teams from over 80 schools. Co-researched fabrication of Gd-doped Fe₃O₄@SiO₂ nanoparticles for drug delivery and contributed to scientific presentation.',
+    },
+    {
+      title: 'First Place – Youth Innovator Competition',
+      organization: 'Nguyễn Tất Thành Secondary & High School',
+      year: 'May 2025',
+      description: 'Awarded 1 of 2 First Prizes among 16 recognised teams at the 10th Youth Innovator Competition. Recognised for creative thinking, problem-solving, and application of interdisciplinary knowledge. Developed and presented the initial prototype of an adaptive traffic management system.',
+    },
   ]
 
   return (
@@ -43,132 +41,76 @@ function Awards() {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      bg="gray.50"
+      bg="#0a0e17"
       py={{ base: 16, md: 24 }}
       px={0}
       position="relative"
     >
       <Box w="100%" px={{ base: 4, md: 8, lg: 12 }} maxW="1200px" mx="auto">
-        <VStack gap={3} mb={12} textAlign="center">
-          <Box
-            as="span"
-            fontSize={{ base: 'md', md: 'lg' }}
-            fontWeight={700}
-            color="purple.600"
-            textTransform="uppercase"
-            letterSpacing="wide"
-            px={6}
-            py={3}
-            bg="white"
-            borderRadius="full"
-            boxShadow="md"
-          >
-            Awards & Achievements
-          </Box>
-          <Heading
-            as="h2"
-            fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }}
-            fontWeight={800}
-            textAlign="center"
-            lineHeight="shorter"
-            bgGradient="linear(135deg, #667eea 0%, #764ba2 100%)"
-            bgClip="text"
-            letterSpacing="tight"
-          >
+        <VStack gap={2} mb={10} textAlign="center">
+          <Text fontSize="xs" fontWeight={500} color="#22d3ee" letterSpacing="wider" fontFamily="var(--font-mono)">
+            / awards
+          </Text>
+          <Heading as="h2" fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} fontWeight={700} color="#f1f5f9" fontFamily="var(--font-sans)">
             Awards & Achievements
           </Heading>
         </VStack>
-        <SimpleGrid columns={{ base: 1, md: 3 }} gap={8}>
-            {awards.map((award, index) => (
-              <Box
-                key={index}
-                bg="white"
-                borderRadius="2xl"
-                p={8}
-                boxShadow="0 4px 20px rgba(0, 0, 0, 0.08)"
-                border="1px solid"
-                borderColor="gray.100"
-                textAlign="center"
-                position="relative"
-                overflow="hidden"
-                _hover={{
-                  transform: 'translateY(-8px)',
-                  boxShadow: '0 12px 40px rgba(102, 126, 234, 0.15)',
-                  borderColor: 'purple.200',
-                }}
-                transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+        <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
+          {awards.map((award, index) => (
+            <Box
+              key={index}
+              bg="#131b2e"
+              borderRadius="var(--radius-lg)"
+              p={6}
+              border="1px solid"
+              borderColor="#1e3a5f"
+              _hover={{ borderColor: 'rgba(34, 211, 238, 0.3)' }}
+              transition="border-color 0.2s"
+            >
+              <Heading as="h3" fontSize="md" mb={2} color="#f1f5f9" fontWeight={600} fontFamily="var(--font-sans)">
+                {award.title}
+              </Heading>
+              <Text fontSize="sm" color="#22d3ee" fontWeight={500} mb={2} fontFamily="var(--font-mono)">
+                {award.organization}
+              </Text>
+              <Badge
+                bg="rgba(34, 211, 238, 0.15)"
+                color="#22d3ee"
+                mb={3}
+                px={3}
+                py={1}
+                borderRadius="var(--radius)"
+                fontSize="xs"
+                fontWeight={500}
+                fontFamily="var(--font-mono)"
               >
-                <Box
-                  w="90px"
-                  h="90px"
-                  borderRadius="full"
-                  bg="white"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  mx="auto"
-                  mb={6}
-                  boxShadow="0 8px 24px rgba(102, 126, 234, 0.3)"
-                  border="3px solid"
-                  borderColor="purple.100"
-                  p={3}
-                  position="relative"
-                  overflow="hidden"
-                >
-                  <Image
-                    src={award.logo}
-                    alt={`${award.organization} logo`}
-                    w="100%"
-                    h="100%"
-                    objectFit="contain"
-                  />
-                </Box>
-                <Heading as="h3" fontSize="lg" mb={3} color="gray.900" fontWeight={700}>
-                  {award.title}
-                </Heading>
-                <Text fontSize="md" color="purple.700" fontWeight={600} mb={3}>
-                  {award.organization}
-                </Text>
-                <Badge
-                  bgGradient="linear(135deg, #667eea, #764ba2)"
-                  color="blue"
-                  backgroundColor="gray.100"
-                  mb={4}
-                  px={4}
-                  py={1.5}
-                  borderRadius="full"
-                  fontSize="xs"
-                  fontWeight={600}
-                >
-                  {award.year}
-                </Badge>
-                <Text color="gray.800" lineHeight="tall" fontSize="sm" fontWeight={500}>
-                  {award.description}
-                </Text>
-              </Box>
-            ))}
-          </SimpleGrid>
+                {award.year}
+              </Badge>
+              <Text color="#94a3b8" lineHeight="tall" fontSize="sm" fontWeight={500}>
+                {award.description}
+              </Text>
+            </Box>
+          ))}
+        </SimpleGrid>
 
-          {/* Scroll Arrow */}
-          <Box
-            position="absolute"
-            bottom={8}
-            left="50%"
-            transform="translateX(-50%)"
-            color="purple.600"
-            _hover={{ color: 'purple.700', transform: 'translateX(-50%) translateY(4px)' }}
-            cursor="pointer"
-            onClick={() => scrollToSection('projects')}
-            transition="all 0.3s"
-            zIndex={2}
-            display={{ base: 'none', md: 'block' }}
-          >
-            <HiArrowDown size={32} />
-          </Box>
+        <Box
+          position="absolute"
+          bottom={8}
+          left="50%"
+          transform="translateX(-50%)"
+          color="#64748b"
+          _hover={{ color: '#22d3ee' }}
+          cursor="pointer"
+          onClick={() => scrollToSection('projects')}
+          transition="color 0.2s"
+          zIndex={2}
+          display={{ base: 'none', md: 'block' }}
+        >
+          <HiArrowDown size={28} />
+        </Box>
       </Box>
     </Box>
   )
 }
 
 export default Awards
-

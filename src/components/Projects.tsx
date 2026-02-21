@@ -1,4 +1,4 @@
-import { Box, Heading, Text, SimpleGrid, Badge, HStack, Button, VStack } from '@chakra-ui/react'
+import { Box, Heading, Text, SimpleGrid, Badge, HStack, VStack, Button } from '@chakra-ui/react'
 import { FiExternalLink } from 'react-icons/fi'
 import { HiArrowDown } from 'react-icons/hi'
 
@@ -9,25 +9,18 @@ function Projects() {
   }
   const projects = [
     {
-      title: 'Master\'s Coursework and Technical Certificates',
-      description: 'All relevant coursework and technical certificates from my master\'s degree as well as working experiences.',
-      technologies: ['Deep Learning', 'Machine Learning', 'Linear Algebra', 'Generative AI'],
-      github: 'https://github.com/nhamhung/Coursework-and-Certificates',
-      demo: 'https://github.com/nhamhung/Coursework-and-Certificates/blob/main/Coursework/Statement%20of%20Purpose.pdf',
+      title: 'AI-Based Traffic Management System',
+      description: 'Cost-efficient AI system for optimizing traffic counters in Vietnam. Real-time edge deployment on NVIDIA Jetson Nano; YOLOv10 for vehicle detection and driver drowsiness monitoring. F-index algorithm for fatigue assessment; 94.4% vehicle recognition and 91.8% drowsiness detection. End-to-end prototype with Unity 3D traffic simulation.',
+      technologies: ['Computer Vision', 'YOLOv10', 'NVIDIA Jetson Nano', 'Unity 3D', 'Python', 'CNN', 'CNN-LSTM'],
+      github: '#',
+      demo: '#',
     },
     {
-      title: 'YouTube Channel',
-      description: 'A YouTube channel where I share my learning journey and experiences in Computer Science.',
-      technologies: ['Data Engineer', 'LeetCode', 'Data Analytics'],
-      github: 'https://github.com/nhamhung/youtube-scripts',
-      demo: 'https://www.youtube.com/watch?v=cmZ9-sDzYYY',
-    },
-    {
-      title: 'Personal Blog',
-      description: 'A personal blog where I share my knowledge and stories to others.',
-      technologies: ['Computer Science', 'AI', 'Cloud Computing'],
-      github: 'https://nhamhung.wordpress.com/',
-      demo: 'https://nhamhung.wordpress.com/2025/03/10/nhat-ky-hang-ngay/',
+      title: 'Gd-doped Fe₃O₄@SiO₂ Nanoparticles for Drug Delivery',
+      description: 'Co-researched fabrication of Gd-doped Fe₃O₄@SiO₂ nanoparticles for drug delivery. Contributed to scientific presentation at the 26th International Elementz Fair, Singapore (Silver Award).',
+      technologies: ['Materials Science', 'Nanoparticles', 'Drug Delivery', 'Research'],
+      github: '#',
+      demo: '#',
     },
   ]
 
@@ -39,76 +32,50 @@ function Projects() {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      bg="white"
+      bg="#0f1629"
       py={{ base: 16, md: 24 }}
       px={0}
       position="relative"
     >
       <Box w="100%" px={{ base: 4, md: 8, lg: 12 }} maxW="1200px" mx="auto">
-        <VStack gap={3} mb={12} textAlign="center">
-          <Box
-            as="span"
-            fontSize={{ base: 'md', md: 'lg' }}
-            fontWeight={700}
-            color="purple.600"
-            textTransform="uppercase"
-            letterSpacing="wide"
-            px={6}
-            py={3}
-            bg="white"
-            borderRadius="full"
-            boxShadow="md"
-          >
-            Featured Projects
-          </Box>
-          <Heading
-            as="h2"
-            fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }}
-            fontWeight={800}
-            textAlign="center"
-            lineHeight="shorter"
-            bgGradient="linear(135deg, #667eea 0%, #764ba2 100%)"
-            bgClip="text"
-            letterSpacing="tight"
-          >
-            Featured Projects
+        <VStack gap={2} mb={10} textAlign="center">
+          <Text fontSize="xs" fontWeight={500} color="#22d3ee" letterSpacing="wider" fontFamily="var(--font-mono)">
+            / projects
+          </Text>
+          <Heading as="h2" fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} fontWeight={700} color="#f1f5f9" fontFamily="var(--font-sans)">
+            Research & Projects
           </Heading>
         </VStack>
-        <SimpleGrid columns={{ base: 1, md: 3 }} gap={8}>
+        <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
           {projects.map((project, index) => (
             <Box
               key={index}
-              bg="white"
-              borderRadius="2xl"
+              bg="#131b2e"
+              borderRadius="var(--radius-lg)"
               p={6}
-              boxShadow="0 4px 20px rgba(0, 0, 0, 0.08)"
               border="1px solid"
-              borderColor="gray.100"
-              _hover={{
-                transform: 'translateY(-8px)',
-                boxShadow: '0 12px 40px rgba(102, 126, 234, 0.15)',
-                borderColor: 'purple.200',
-              }}
-              transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+              borderColor="#1e3a5f"
+              _hover={{ borderColor: 'rgba(34, 211, 238, 0.3)' }}
+              transition="border-color 0.2s"
             >
-              <Heading as="h3" fontSize="lg" mb={3} color="gray.900" fontWeight={700}>
+              <Heading as="h3" fontSize="lg" mb={3} color="#f1f5f9" fontWeight={600} fontFamily="var(--font-sans)">
                 {project.title}
               </Heading>
-              <Text color="gray.800" mb={4} lineHeight="tall" fontSize="sm" fontWeight={500}>
+              <Text color="#94a3b8" mb={4} lineHeight="tall" fontSize="sm" fontWeight={500}>
                 {project.description}
               </Text>
               <HStack flexWrap="wrap" gap={2} mb={5}>
                 {project.technologies.map((tech, i) => (
                   <Badge
                     key={i}
-                    bg="purple.50"
-                    color="purple.700"
-                    backgroundColor="gray.100"
-                    px={3}
+                    bg="rgba(34, 211, 238, 0.12)"
+                    color="#67e8f9"
+                    px={2.5}
                     py={1}
-                    borderRadius="md"
+                    borderRadius="var(--radius)"
                     fontSize="xs"
-                    fontWeight={600}
+                    fontWeight={500}
+                    fontFamily="var(--font-mono)"
                   >
                     {tech}
                   </Badge>
@@ -116,42 +83,34 @@ function Projects() {
               </HStack>
               <HStack gap={3}>
                 <Button
-                  onClick={() => window.open(project.github, '_blank')}
+                  onClick={() => project.github !== '#' && window.open(project.github, '_blank')}
                   size="sm"
                   variant="outline"
-                  backgroundColor="gray.100"
-                  borderColor="purple.300"
-                  color="purple.600"
-                  fontWeight={600}
-                  _hover={{
-                    bg: 'purple.50',
-                    borderColor: 'purple.400',
-                    transform: 'translateY(-2px)',
-                  }}
+                  borderColor="#1e3a5f"
+                  color="#94a3b8"
+                  fontWeight={500}
+                  fontFamily="var(--font-mono)"
+                  _hover={{ borderColor: '#22d3ee', color: '#22d3ee' }}
                   transition="all 0.2s"
                 >
                   <HStack gap={2}>
                     <Text>GitHub</Text>
-                    <FiExternalLink />
+                    <FiExternalLink size={12} />
                   </HStack>
                 </Button>
                 <Button
-                  onClick={() => window.open(project.demo, '_blank')}
+                  onClick={() => project.demo !== '#' && window.open(project.demo, '_blank')}
                   size="sm"
-                  bgGradient="linear(135deg, #667eea, #764ba2)"
-                  color="blue.600"
-                  fontWeight={600}
-                  backgroundColor="gray.100"
-                  _hover={{
-                    transform: 'translateY(-2px)',
-                    boxShadow: '0 8px 20px rgba(102, 126, 234, 0.4)',
-                  }}
+                  bg="#22d3ee"
+                  color="#0a0e17"
+                  fontWeight={500}
+                  fontFamily="var(--font-mono)"
+                  _hover={{ bg: '#67e8f9' }}
                   transition="all 0.2s"
-                  borderColor="purple.300"
                 >
                   <HStack gap={2}>
-                    <Text>Live Demo</Text>
-                    <FiExternalLink />
+                    <Text>Demo</Text>
+                    <FiExternalLink size={12} />
                   </HStack>
                 </Button>
               </HStack>
@@ -159,21 +118,20 @@ function Projects() {
           ))}
         </SimpleGrid>
 
-        {/* Scroll Arrow */}
         <Box
           position="absolute"
           bottom={8}
           left="50%"
           transform="translateX(-50%)"
-          color="purple.600"
-          _hover={{ color: 'purple.700', transform: 'translateX(-50%) translateY(4px)' }}
+          color="#64748b"
+          _hover={{ color: '#22d3ee' }}
           cursor="pointer"
-          onClick={() => scrollToSection('gallery')}
-          transition="all 0.3s"
+          onClick={() => scrollToSection('certificates')}
+          transition="color 0.2s"
           zIndex={2}
           display={{ base: 'none', md: 'block' }}
         >
-          <HiArrowDown size={32} />
+          <HiArrowDown size={28} />
         </Box>
       </Box>
     </Box>
@@ -181,4 +139,3 @@ function Projects() {
 }
 
 export default Projects
-

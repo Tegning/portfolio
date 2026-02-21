@@ -13,280 +13,153 @@ function About() {
       w="100%"
       position="relative"
       overflow="hidden"
-      bg="white"
+      bg="#0f1629"
       display="flex"
       alignItems="center"
       justifyContent="center"
       py={{ base: 16, md: 24 }}
       px={0}
     >
-      {/* Decorative background elements */}
-      <Box
-        position="absolute"
-        top="-10%"
-        right="-5%"
-        w="400px"
-        h="400px"
-        borderRadius="full"
-        bg="purple.50"
-        opacity={0.3}
-        filter="blur(60px)"
-      />
-      <Box
-        position="absolute"
-        bottom="-10%"
-        left="-5%"
-        w="500px"
-        h="500px"
-        borderRadius="full"
-        bg="blue.50"
-        opacity={0.3}
-        filter="blur(60px)"
-      />
-
       <Box w="100%" px={{ base: 4, md: 8, lg: 12 }} position="relative" zIndex={1}>
-        <VStack align="stretch" gap={6}>
-          {/* Header Section */}
-          <VStack gap={3} mb={2}>
-            <Box
-              as="span"
-              fontSize={{ base: 'md', md: 'lg' }}
-              fontWeight={700}
-              color="purple.600"
-              textTransform="uppercase"
-              letterSpacing="wide"
-              px={6}
-              py={3}
-              bg="white"
-              borderRadius="full"
-              boxShadow="md"
+        <VStack align="stretch" gap={8}>
+          <VStack gap={2} mb={2}>
+            <Text
+              fontSize="xs"
+              fontWeight={500}
+              color="#22d3ee"
+              letterSpacing="wider"
+              fontFamily="var(--font-mono)"
             >
-              About Me
-            </Box>
+              / about
+            </Text>
             <Heading
               as="h2"
-              fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }}
-              fontWeight={800}
+              fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
+              fontWeight={700}
               textAlign="center"
-              lineHeight="shorter"
-              bgGradient="linear(135deg, #667eea 0%, #764ba2 100%)"
-              bgClip="text"
+              color="#f1f5f9"
               letterSpacing="tight"
+              fontFamily="var(--font-sans)"
             >
               About Me
             </Heading>
           </VStack>
 
-          {/* Content Section */}
-          <Box
-            w="100%"
-          >
-            <VStack gap={4} align="stretch">
-              <Box
-                bg="white"
-                p={{ base: 6, md: 8 }}
-                borderRadius="2xl"
-                boxShadow="xl"
-                border="1px solid"
-                borderColor="blue.100"
-                _hover={{
-                  boxShadow: '2xl',
-                  transform: 'translateY(-2px)',
-                }}
-                transition="all 0.3s"
-              >
+          <VStack gap={4} align="stretch">
+            <Box
+              bg="#131b2e"
+              p={{ base: 6, md: 8 }}
+              borderRadius="var(--radius-lg)"
+              border="1px solid"
+              borderColor="#1e3a5f"
+              _hover={{ borderColor: 'rgba(34, 211, 238, 0.3)' }}
+              transition="border-color 0.2s"
+            >
               <Text
-                fontSize={{ base: 'lg', md: 'xl' }}
-                color="gray.800"
+                fontSize={{ base: 'md', md: 'lg' }}
+                color="#94a3b8"
                 lineHeight="tall"
                 textAlign="center"
-                fontWeight={500}
               >
-                I'm a passionate <Text as="span" fontWeight={700} color="purple.600">Data Engineer</Text> with a love for building reliable and efficient data pipelines. With a deep expertise in <Text as="span" fontWeight={700} color="blue.600">Big Data and Analytics</Text>, I enjoy transforming raw data into actionable insights, hence enabling organizations to make data-driven decisions.
+                I focus on <Text as="span" fontWeight={600} color="#22d3ee">Computer Vision and AI</Text> for real-world impact. I developed a cost-efficient AI-based traffic management system using <Text as="span" fontWeight={600} color="#67e8f9">YOLOv10 and NVIDIA Jetson Nano</Text>, with vehicle detection and driver drowsiness monitoring, achieving 94.4% vehicle recognition and 91.8% drowsiness detection accuracy.
               </Text>
-              </Box>
-
-              <Box
-                bg="white"
-                p={{ base: 6, md: 8 }}
-                borderRadius="2xl"
-                boxShadow="xl"
-                border="1px solid"
-                borderColor="purple.100"
-                _hover={{
-                  boxShadow: '2xl',
-                  transform: 'translateY(-2px)',
-                }}
-                transition="all 0.3s"
-              >
+            </Box>
+            <Box
+              bg="#131b2e"
+              p={{ base: 6, md: 8 }}
+              borderRadius="var(--radius-lg)"
+              border="1px solid"
+              borderColor="#1e3a5f"
+              _hover={{ borderColor: 'rgba(34, 211, 238, 0.3)' }}
+              transition="border-color 0.2s"
+            >
               <Text
-                fontSize={{ base: 'lg', md: 'xl' }}
-                color="gray.800"
+                fontSize={{ base: 'md', md: 'lg' }}
+                color="#94a3b8"
                 lineHeight="tall"
                 textAlign="center"
-                fontWeight={500}
               >
-                When I'm not coding, you can find me doing <Text as="span" fontWeight={700} color="cyan.600">3 things simultaneously</Text>: pursuing higher studies, exploring new technologies and mentoring students on all things education-related and in various formats.
-              </Text>
-              </Box>
-            </VStack>
-          </Box>
-
-          {/* Statistics Cards */}
-          <SimpleGrid 
-            columns={{ base: 1, md: 3 }} 
-            gap={{ base: 6, md: 8 }} 
-            mt={8}
-            w="100%"
-          >
-            <Box
-              bg="white"
-              p={{ base: 8, md: 10 }}
-              borderRadius="2xl"
-              boxShadow="xl"
-              textAlign="center"
-              border="2px solid"
-              borderColor="purple.200"
-              position="relative"
-              overflow="hidden"
-              _hover={{
-                transform: 'translateY(-8px) scale(1.02)',
-                boxShadow: '2xl',
-                borderColor: 'purple.400',
-              }}
-              transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-            >
-              <Box
-                position="absolute"
-                top={0}
-                left={0}
-                right={0}
-                h="4px"
-                bgGradient="linear(90deg, #667eea 0%, #764ba2 100%)"
-              />
-              <Heading
-                as="h3"
-                fontSize={{ base: '5xl', md: '6xl' }}
-                fontWeight={800}
-                color="purple.600"
-                mb={5}
-              >
-                4+
-              </Heading>
-              <Text fontSize="lg" fontWeight={600} color="gray.800" mb={1}>
-                Years of Professional Data
-              </Text>
-              <Text fontSize="lg" fontWeight={600} color="gray.800">
-                and Software Engineering
+                I led a team of 5 in research and system design to compete in international innovation competitions, winning <Text as="span" fontWeight={600} color="#fbbf24">Gold Award at the World Invention Creativity Olympics 2025</Text> in South Korea and Silver at MSEC Forum Japan and International Elementz Fair Singapore. I also volunteer and take part in robotics competitions and community engagement projects.
               </Text>
             </Box>
+          </VStack>
 
+          <SimpleGrid columns={{ base: 1, md: 3 }} gap={6} mt={4} w="100%">
             <Box
-              bg="white"
-              p={{ base: 8, md: 10 }}
-              borderRadius="2xl"
-              boxShadow="xl"
+              bg="#131b2e"
+              p={{ base: 6, md: 8 }}
+              borderRadius="var(--radius-lg)"
               textAlign="center"
-              border="2px solid"
-              borderColor="blue.200"
-              position="relative"
-              overflow="hidden"
-              _hover={{
-                transform: 'translateY(-8px) scale(1.02)',
-                boxShadow: '2xl',
-                borderColor: 'blue.400',
-              }}
-              transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+              border="1px solid"
+              borderColor="#1e3a5f"
+              _hover={{ borderColor: 'rgba(251, 191, 36, 0.4)' }}
+              transition="border-color 0.2s"
             >
-              <Box
-                position="absolute"
-                top={0}
-                left={0}
-                right={0}
-                h="4px"
-                bgGradient="linear(90deg, #2196F3 0%, #00BCD4 100%)"
-              />
-              <Heading
-                as="h3"
-                fontSize={{ base: '5xl', md: '6xl' }}
-                fontWeight={800}
-                color="blue.600"
-                mb={5}
-              >
-                5+
+              <Box h="3px" bg="#fbbf24" borderRadius="full" w="40px" mx="auto" mb={4} />
+              <Heading as="h3" fontSize={{ base: '2xl', md: '3xl' }} fontWeight={700} color="#fbbf24" mb={2} fontFamily="var(--font-mono)">
+                Gold
               </Heading>
-              <Text fontSize="lg" fontWeight={600} color="gray.800" mb={1}>
-                Years of Teaching and
-              </Text>
-              <Text fontSize="lg" fontWeight={600} color="gray.800">
-                Mentoring
+              <Text fontSize="sm" color="#94a3b8" fontWeight={500}>
+                World Invention Creativity Olympics 2025, South Korea
               </Text>
             </Box>
-
             <Box
-              bg="white"
-              p={{ base: 8, md: 10 }}
-              borderRadius="2xl"
-              boxShadow="xl"
+              bg="#131b2e"
+              p={{ base: 6, md: 8 }}
+              borderRadius="var(--radius-lg)"
               textAlign="center"
-              border="2px solid"
-              borderColor="cyan.200"
-              position="relative"
-              overflow="hidden"
-              _hover={{
-                transform: 'translateY(-8px) scale(1.02)',
-                boxShadow: '2xl',
-                borderColor: 'cyan.400',
-              }}
-              transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+              border="1px solid"
+              borderColor="#1e3a5f"
+              _hover={{ borderColor: 'rgba(34, 211, 238, 0.4)' }}
+              transition="border-color 0.2s"
             >
-              <Box
-                position="absolute"
-                top={0}
-                left={0}
-                right={0}
-                h="4px"
-                bgGradient="linear(90deg, #00BCD4 0%, #009688 100%)"
-              />
-              <Heading
-                as="h3"
-                fontSize={{ base: '5xl', md: '6xl' }}
-                fontWeight={800}
-                color="cyan.600"
-                mb={5}
-              >
-                3+
+              <Box h="3px" bg="#22d3ee" borderRadius="full" w="40px" mx="auto" mb={4} />
+              <Heading as="h3" fontSize={{ base: '2xl', md: '3xl' }} fontWeight={700} color="#22d3ee" mb={2} fontFamily="var(--font-mono)">
+                94.4%
               </Heading>
-              <Text fontSize="lg" fontWeight={600} color="gray.800" mb={1}>
-                Years of Creating and Sharing
+              <Text fontSize="sm" color="#94a3b8" fontWeight={500}>
+                Vehicle Recognition Accuracy (YOLOv10)
               </Text>
-              <Text fontSize="lg" fontWeight={600} color="gray.800">
-                Educational Content
+            </Box>
+            <Box
+              bg="#131b2e"
+              p={{ base: 6, md: 8 }}
+              borderRadius="var(--radius-lg)"
+              textAlign="center"
+              border="1px solid"
+              borderColor="#1e3a5f"
+              _hover={{ borderColor: 'rgba(34, 211, 238, 0.4)' }}
+              transition="border-color 0.2s"
+            >
+              <Box h="3px" bg="#22d3ee" borderRadius="full" w="40px" mx="auto" mb={4} />
+              <Heading as="h3" fontSize={{ base: '2xl', md: '3xl' }} fontWeight={700} color="#22d3ee" mb={2} fontFamily="var(--font-mono)">
+                91.8%
+              </Heading>
+              <Text fontSize="sm" color="#94a3b8" fontWeight={500}>
+                Drowsiness Detection Accuracy (Face-based)
               </Text>
             </Box>
           </SimpleGrid>
         </VStack>
       </Box>
 
-      {/* Scroll Arrow */}
       <Box
         position="absolute"
         bottom={8}
         left="50%"
         transform="translateX(-50%)"
-        color="purple.600"
-        _hover={{ color: 'purple.700', transform: 'translateX(-50%) translateY(4px)' }}
+        color="#64748b"
+        _hover={{ color: '#22d3ee' }}
         cursor="pointer"
         onClick={() => scrollToSection('education')}
-        transition="all 0.3s"
+        transition="color 0.2s"
         zIndex={2}
         display={{ base: 'none', md: 'block' }}
       >
-        <HiArrowDown size={32} />
+        <HiArrowDown size={28} />
       </Box>
     </Box>
   )
 }
 
 export default About
-
