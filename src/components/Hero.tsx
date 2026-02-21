@@ -1,6 +1,8 @@
-import { Box, Container, Heading, Text, Button, Flex, VStack, Image } from '@chakra-ui/react'
+import { Box, Container, Heading, Text, Button, Flex, VStack, Image, Link } from '@chakra-ui/react'
 import { HiArrowDown } from 'react-icons/hi'
+import { FiDownload } from 'react-icons/fi'
 import profileImage from '../assets/profile.jpeg'
+import resumePdf from '../assets/resume.pdf?url'
 
 function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -98,52 +100,81 @@ function Hero() {
               </Text>
             </Box>
 
-            <Flex
+            <VStack
               gap={4}
-              direction={{ base: 'column', sm: 'row' }}
+              align={{ base: 'center', sm: 'stretch' }}
               w={{ base: 'full', sm: 'auto' }}
-              justify={{ base: 'center', lg: 'flex-start' }}
               css={{ animation: 'fadeInUp 0.8s ease-out 0.5s both' }}
             >
-              <Button
-                onClick={() => scrollToSection('projects')}
-                size={{ base: 'md', md: 'lg' }}
-                bg="#22d3ee"
-                color="#0a0e17"
-                fontWeight={600}
-                px={8}
-                fontFamily="var(--font-mono)"
-                _hover={{
-                  bg: '#67e8f9',
-                  transform: 'translateY(-2px)',
-                  boxShadow: '0 0 24px rgba(34, 211, 238, 0.4)',
-                }}
-                transition="all 0.2s"
+              <Flex
+                gap={4}
+                direction={{ base: 'column', sm: 'row' }}
+                w={{ base: 'full', sm: 'auto' }}
+                justify={{ base: 'center', lg: 'flex-start' }}
               >
-                View Projects
-              </Button>
-              <Button
-                onClick={() => scrollToSection('contact')}
-                size={{ base: 'md', md: 'lg' }}
-                variant="outline"
-                borderColor="#334155"
-                borderWidth="1px"
-                color="#f1f5f9"
-                fontWeight={500}
-                px={8}
-                bg="transparent"
-                fontFamily="var(--font-mono)"
-                _hover={{
-                  borderColor: '#22d3ee',
-                  color: '#22d3ee',
-                  bg: 'rgba(34, 211, 238, 0.06)',
-                  transform: 'translateY(-2px)',
-                }}
-                transition="all 0.2s"
-              >
-                Get In Touch
-              </Button>
-            </Flex>
+                <Button
+                  onClick={() => scrollToSection('projects')}
+                  size={{ base: 'md', md: 'lg' }}
+                  bg="#22d3ee"
+                  color="#0a0e17"
+                  fontWeight={600}
+                  px={8}
+                  fontFamily="var(--font-mono)"
+                  _hover={{
+                    bg: '#67e8f9',
+                    transform: 'translateY(-2px)',
+                    boxShadow: '0 0 24px rgba(34, 211, 238, 0.4)',
+                  }}
+                  transition="all 0.2s"
+                >
+                  View Projects
+                </Button>
+                <Button
+                  onClick={() => scrollToSection('contact')}
+                  size={{ base: 'md', md: 'lg' }}
+                  variant="outline"
+                  borderColor="#334155"
+                  borderWidth="1px"
+                  color="#f1f5f9"
+                  fontWeight={500}
+                  px={8}
+                  bg="transparent"
+                  fontFamily="var(--font-mono)"
+                  _hover={{
+                    borderColor: '#22d3ee',
+                    color: '#22d3ee',
+                    bg: 'rgba(34, 211, 238, 0.06)',
+                    transform: 'translateY(-2px)',
+                  }}
+                  transition="all 0.2s"
+                >
+                  Get In Touch
+                </Button>
+              </Flex>
+              <Link href={resumePdf} download="resume.pdf" _hover={{ textDecoration: 'none' }}>
+                <Button
+                  size={{ base: 'md', md: 'lg' }}
+                  bg="transparent"
+                  color="#22d3ee"
+                  fontWeight={600}
+                  px={8}
+                  fontFamily="var(--font-mono)"
+                  borderWidth="1px"
+                  borderColor="#22d3ee"
+                  _hover={{
+                    bg: 'rgba(34, 211, 238, 0.1)',
+                    transform: 'translateY(-2px)',
+                    boxShadow: '0 0 24px rgba(34, 211, 238, 0.2)',
+                  }}
+                  transition="all 0.2s"
+                >
+                  <Box as="span" mr={2} display="inline-flex">
+                    <FiDownload />
+                  </Box>
+                  Download Resume
+                </Button>
+              </Link>
+            </VStack>
           </VStack>
 
           <Box

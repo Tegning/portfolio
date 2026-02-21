@@ -31,7 +31,7 @@ function Skills() {
     },
     {
       category: 'Simulation & Tools',
-      skills: ['Unity 3D', 'Traffic Simulation', 'Python', 'Algorithm Design', 'F-index', 'EAR', 'Temporal Aggregation'],
+      skills: ['Unity 3D', 'Traffic Simulation', 'Python', 'Algorithm Design', 'EAR', 'Temporal Aggregation'],
     },
     {
       category: 'Research & Leadership',
